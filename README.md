@@ -1,2 +1,2 @@
-# heranmara.github.com
+# Herdian Anjasmara Portfolio
 Herdian Anjasmara's Website Portfolio
