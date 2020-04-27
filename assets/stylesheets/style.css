@@ -1,0 +1,324 @@
+html {
+        scroll-behavior: smooth;
+}
+
+:root {
+        --back-col: #26292f;
+        --main-col: #5294e2;
+        --sub-col: #cfced3;
+        font-size: 16px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+}
+
+body {
+        margin: 0;
+        padding: 0;
+        background-color: var(--back-col);
+        overflow-x: hidden;
+}
+
+body::before {
+        content: '';
+        top: 5rem;
+        right: 5rem;
+        width: 25rem;
+        height: 0;
+        border-bottom: .4rem solid var(--sub-col);
+        position: absolute;
+        opacity: .2;
+}
+
+/* HEADER */
+.head {
+        padding: 10vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+}
+
+.head::before {
+        content: '0';
+        font-size: 40rem;
+        color: var(--sub-col);
+        top: -10rem;
+        left: -1rem;
+        opacity: .2;
+        position: absolute;
+        z-index: 1;
+}
+
+.head::after {
+        content: '1';
+        font-size: 40rem;
+        color: var(--sub-col);
+        bottom: -20rem;
+        right: 0;
+        opacity: .2;
+        position: absolute;
+        z-index: 1;
+}
+
+.head > * {
+        z-index: 3;
+}
+
+.htitle {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-transform: uppercase;
+}
+
+.htitle-1 {
+        line-height: 100%;
+        font-size: 5em;
+        margin: 0;
+        margin-right: .8rem;
+        padding: .8rem;
+        border-right: 3px solid var(--main-col);
+}
+
+.htitle-2a, .htitle-2b {
+        margin: 0;
+}
+
+.htitle-2a {
+        font-size: 2em;
+        color: var(--main-col);
+}
+
+.htitle-2b {
+        font-size: 1.6em;
+}
+
+.hlink {
+        text-align: center;
+}
+
+.hlcont {
+        padding: 0;
+        margin: 4rem 0;
+        display: flex;
+        justify-content: center;
+        list-style-type: none;
+}
+
+.hlitem {
+        margin: 0 2rem;
+}
+
+.hlitem a {
+        display: block;
+        padding: 5px;
+        text-align: center;
+        color: white;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: border-color .3s;
+}
+
+.hlitem a:hover, .hlitem a:focus {
+        border: 1px solid var(--main-col);
+}
+
+.hlitem a > * {
+        display: block;
+        margin: auto;
+}
+
+.hlitem a img {
+        width: 64px;
+        filter: contrast(100);
+}
+
+.hlitem a span {
+        margin-top: 10px;
+}
+
+.hlother {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
+
+.hlother a {
+        display: block;
+        padding: 1rem 2rem;
+        margin: 0 2rem;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        border: 1px solid var(--main-col);
+        transition: background-color .3s;
+}
+
+.hlother a:hover,
+.hlother a:focus {
+        background-color: var(--main-col);
+}
+
+/* MAIN */
+main > * {
+        position: relative;
+        z-index: 2;
+}
+
+.project > h1 {
+        font-size: 2em;
+        text-align: center;
+        text-transform: uppercase;
+}
+
+.pcont {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        padding: 2vw 5vw;
+}
+
+.pitem {
+        top: 0;
+        width: 23rem;
+        height: 20rem;
+        margin: 2rem 1rem;
+        text-align: center;
+        background: center / cover url(../images/placeholder-image.jpg);
+        border: 1px solid transparent;
+        position: relative;
+        overflow: hidden;
+        transition: border-color .3s, top .3s, box-shadow .3s;
+}
+
+.pitem:hover {
+        top: -1em;
+        border-color: var(--main-col);
+        box-shadow: 0 .5em 1em 0 #111d;
+}
+
+.pioutfo {
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        perspective: 20em;
+        transition: background-color .3s;
+}
+
+.pitem:hover .pioutfo {
+        background-color: #26292fee;
+}
+
+.piinfo {
+        padding: 0 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 100%;
+        height: 100%;
+        background-color: transparent;
+        position: relative;
+        transition: transform .3s, background-color .3s;
+        transform: translateZ(-100px);
+        box-sizing: border-box;
+}
+
+.pitem:hover .piinfo {
+        transform: translateZ(0);
+}
+
+.piinfo h1 {
+        margin: 0;
+        margin-top: 2rem;
+        padding: .4rem 0;
+        font-size: 1.4em;
+        font-weight: bold;
+        color: transparent;
+        position: relative;
+        transition: color .3s;
+}
+
+.pitem:hover .piinfo h1 {
+        color: white;
+}
+
+.piinfo ul {
+        padding: 0;
+        margin: auto;
+        list-style-type: none;
+        text-align: center;
+        color: transparent;
+        transition: color .3s;
+}
+.piinfo li {
+        margin: .5rem 0;
+}
+
+.pitem:hover .piinfo ul {
+        color: var(--main-col);
+}
+
+.piopt {
+        margin-bottom: 2rem;
+        display: flex;
+        justify-content: center;
+}
+
+.piopt a {
+        display: block;
+        margin: 0 1rem;
+        padding: .8rem 1.8rem;
+        color: transparent;
+        text-decoration: none;
+        border: 1px solid transparent;
+        transition: color .3s, background-color .3s, border .3s;
+}
+
+.pitem:hover .piopt a {
+        color: white;
+        border: 1px solid var(--main-col);
+}
+
+.piopt a:hover {
+        background-color: var(--main-col);
+}
+
+/* FOOTER */
+footer {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        height: 10rem;
+        margin: auto 3rem 3rem 3rem;
+        margin-bottom: 1rem;
+        text-align: center;
+        color: var(--back-col);
+        border-top: 2px solid var(--main-col);
+}
+
+.backtotop {
+        display: inline-block;
+        padding: 1rem 2rem;
+        margin: auto;
+        color: white;
+        background-color: transparent;
+        font-weight: bold;
+        text-decoration: none;
+        border: 1px solid var(--main-col);
+        transition: background-color .3s;
+}
+
+.backtotop:hover, .backtotop:focus {
+        color: white;
+        background-color: var(--main-col);
+}
+
+.end {
+        text-align: center;
+        color: white;
+}
+
+.endcol {
+        color: var(--main-col);
+}
